@@ -1,0 +1,51 @@
+{
+  "name": "tsc-pnp",
+  "version": "0.1.0",
+  "description": "TypeScript Compiler with Plug’n’Play support",
+  "keywords": [
+    "typescript",
+    "yarn",
+    "plugnplay",
+    "pnp"
+  ],
+  "repository": "https://github.com/ark120202/tsc-pnp",
+  "license": "Apache-2.0",
+  "author": "ark120202",
+  "files": [
+    "lib/**/*.js",
+    "lib/**/*.ts"
+  ],
+  "bin": "lib/tsc-pnp.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "run-s lint:prettier lint:tslint",
+    "lint:prettier": "prettier --check **/*.{ts,md,yml,json}",
+    "lint:tslint": "tslint -p .",
+    "prepublishOnly": "yarn build"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "proseWrap": "always",
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "dependencies": {
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "@ark120202/tslint-config": "^4.0.2",
+    "@ark120202/typescript-config": "^2.0.0",
+    "@types/node": "^12.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.17.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  },
+  "peerDependencies": {
+    "typescript": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  }
+}
